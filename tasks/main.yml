@@ -74,4 +74,4 @@
 
 - name: Dump kapow routes when configuration changes
   shell: kapow route list > "{{ kapow_config }}/routes"
-  when: kapow_config_file.stat.exists == False
+  when: not kapow_config_file.stat.exists
