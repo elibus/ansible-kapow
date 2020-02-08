@@ -32,9 +32,26 @@ Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
+```
     - hosts: servers
       roles:
          - elibus.kapow
+  vars:
+    kapow_routes:
+      - {
+        command: "kapow get /request/matches/message | kapow set /response/body",
+        url_pattern: "/hello"
+      }
+      - {
+        command: "kapow get /request/matches/message | kapow set /response/body",
+        url_pattern: "/hello2"
+      }
+      - {
+        command: "kapow get /request/matches/message | kapow set /response/body",
+        url_pattern: "/hello3",
+        state: absent
+      }
+```
 
 License
 -------
