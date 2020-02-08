@@ -1,7 +1,7 @@
 Role Name
 =========
 
-Install and configure kapow
+Install and configure kapow (https://github.com/BBVA/kapow/).
 
 Requirements
 ------------
@@ -44,4 +44,4 @@ GPL3
 Author Information
 ------------------
 
-Github: 
+Github: https://github.com/elibus/ansible-kapow
