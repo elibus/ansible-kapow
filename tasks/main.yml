@@ -17,7 +17,7 @@
     comment: kapow service account
     state: present
     system: yes
-    
+
 - name: Configure kapow systemd service
   template:
     src: kapow.service.j2
