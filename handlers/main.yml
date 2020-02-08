@@ -4,3 +4,6 @@
   systemd:
     state: restarted
     name: "{{ kapow_service }}"
+
+- name: dump kapow routes
+  shell: kapow route list > "{{ kapow_config }}/routes"

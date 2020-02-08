@@ -65,7 +65,7 @@
     state: "{{ item.state | default('present') }}"
   with_items: "{{ kapow_routes }}"
   when: kapow_routes is defined
-  register: kapow_routes_configuration
+  notify: dump kapow routes
 
 - name: Check if "{{ kapow_config }}/routes" exists
   stat:
@@ -74,4 +74,4 @@
 
 - name: Dump kapow routes when configuration changes
   shell: kapow route list > "{{ kapow_config }}/routes"
-  when: kapow_routes_configuration.changed or kapow_config_file.stat.exists == False 
+  when: kapow_config_file.stat.exists == False
