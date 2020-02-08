@@ -1,0 +1,23 @@
+galaxy_info:
+  author: Marco Tizzoni
+  description: kapow (https://github.com/BBVA/kapow/) for linux and mac
+  issue_tracker_url: https://github.com/elibus/ansible-kapow/issues
+  license: GPLv3
+  min_ansible_version: 2.5
+  platforms:
+    - name: EL
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: MacOSX
+      versions:
+        - all
+        - any
+  galaxy_tags: 
+    - kapow
+    - system

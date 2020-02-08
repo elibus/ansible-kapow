@@ -1,0 +1,5 @@
+---
+kapow_version: 0.3.0
+kapow_dist_base_url: "https://github.com/BBVA/kapow/releases/download"
+kapow_bin_dir: /usr/local/bin
+kapow_checksum: sha512:d5da23bb7480a3e39eb6942cc09397f6fcad525f77381abbf501ae87908840878c83f1a2c623285e1de58619c83ffae8517b3440053edde0c889ccbd0371fcbb

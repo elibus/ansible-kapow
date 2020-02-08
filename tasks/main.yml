@@ -1,0 +1,11 @@
+---
+- name: Include system dependant vars
+  include_vars:
+    file: "{{ ansible_system }}_{{ ansible_architecture }}.yml"
+
+- name: Download kapow
+  get_url:
+    url: "{{ kapow_dist_base_url }}/v{{ kapow_version }}/kapow_{{ kapow_version }}_{{ kapow_arch }}"
+    dest: "{{ kapow_bin_dir }}/kapow"
+    mode: '0755'
+    checksum: "{{ kapow_checksum }}"
