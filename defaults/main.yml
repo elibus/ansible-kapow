@@ -7,6 +7,7 @@ kapow_checksum: sha512:d5da23bb7480a3e39eb6942cc09397f6fcad525f77381abbf501ae879
 # Service
 kapow_user: kapow
 kapow_service: kapow
+kapow_config: /etc/kapow
 
 # Bind interfaces
 kapow_bind: "localhost:8080"

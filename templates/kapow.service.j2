@@ -7,6 +7,7 @@ Type=simple
 User={{ kapow_user }}
 ExecStart={{ kapow_bin_dir }}/kapow server --bind {{ kapow_bind }} --control-bind {{ kapow_control_bind }} --data-bind {{ kapow_data_bind }}
 ExecStop=/bin/kill $(pidof {{ kapow_bin_dir }}/kapow)
+ExecStartPost=/usr/local/bin/kapow-restore-routes.sh
 
 [Install]
 WantedBy=multi-user.target

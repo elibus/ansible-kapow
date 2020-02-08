@@ -19,8 +19,3 @@
         url_pattern: "/hello3",
         state: absent
       }
-      - {
-        command: "kapow get /request/matches/message | kapow set /response/body",
-        url_pattern: "/hello3",
-        state: present
-      }
