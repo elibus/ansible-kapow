@@ -1,7 +1,7 @@
 galaxy_info:
   author: Marco Tizzoni
   description: kapow (https://github.com/BBVA/kapow/) for linux
-  issue_tracker_url: https://github.com/elibus/ansible-kapow/issues
+  issue_tracker_url: https://github.com/elibus/ansible-role-kapow/issues
   license: GPLv3
   min_ansible_version: 2.5
   platforms:
