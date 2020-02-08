@@ -1,0 +1,12 @@
+[Unit]
+Description=kapow
+After=network.target
+
+[Service]
+Type=simple
+User={{ kapow_user }}
+ExecStart={{ kapow_bin_dir }}/kapow server --bind {{ kapow_bind }}
+ExecStop=/bin/kill $(pidof {{ kapow_bin_dir }}/kapow)
+
+[Install]
+WantedBy=multi-user.target

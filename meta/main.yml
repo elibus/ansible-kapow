@@ -14,10 +14,6 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
-    - name: MacOSX
-      versions:
-        - all
-        - any
   galaxy_tags: 
     - kapow
     - system
