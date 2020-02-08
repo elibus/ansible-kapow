@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 User={{ kapow_user }}
-ExecStart={{ kapow_bin_dir }}/kapow server --bind {{ kapow_bind }}
+ExecStart={{ kapow_bin_dir }}/kapow server --bind {{ kapow_bind }} --control-bind {{ kapow_control_bind }} --data-bind {{ kapow_data_bind }}
 ExecStop=/bin/kill $(pidof {{ kapow_bin_dir }}/kapow)
 
 [Install]

@@ -1,2 +1,6 @@
 ---
-# handlers file for elibus.kapow
+
+- name: restart kapow
+  systemd:
+    state: restarted
+    name: "{{ kapow_service }}"

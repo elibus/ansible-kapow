@@ -9,6 +9,7 @@
     dest: "{{ kapow_bin_dir }}/kapow"
     mode: '0755'
     checksum: "{{ kapow_checksum }}"
+  notify: restart kapow
 
 - name: Create kapow service account
   user:
@@ -21,6 +22,7 @@
   template:
     src: kapow.service.j2
     dest: "/etc/systemd/system/{{ kapow_service }}.service"
+  notify: restart kapow
 
 - name: Enable kapow systemd service
   systemd:
@@ -28,3 +30,22 @@
     state: started
     enabled: yes
     daemon_reload: yes
+
+- name: Restart kapow
+  meta: flush_handlers
+
+- name: Waits for port kapow to listen on control bind port
+  wait_for:
+    host: "{{ kapow_control_bind.split(':')[0] }}"
+    port: "{{ kapow_control_bind.split(':')[1] }}"
+    timeout: 5
+
+- name: Configure kapow routes
+  kapow_route:
+    method: "{{ item.method | default('GET') }}"
+    url_pattern: "{{ item.url_pattern }}"
+    command: "{{ item.command }}"
+    entrypoint: "{{ item.entrypoint | default('/bin/sh -c') }}"
+    state: "{{ item.state | default('present') }}"
+  with_items: "{{ kapow_routes }}"
+  when: kapow_routes is defined
