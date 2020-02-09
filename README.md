@@ -1,12 +1,19 @@
-Role Name
-=========
+elibus.kapow
+============
 
 Install and configure kapow (https://github.com/BBVA/kapow/).
+
+The role supports the following features:
+ - Install kapow from binary releases
+ - Install and enable a systemd service
+ - Can add/remove kapow routes
+ - Configured routes are persisted in a configuration file and restored on service restart
 
 Requirements
 ------------
 
-None.
+ - a recent linux system with `systemd`
+ - `jq` installed (https://stedolan.github.io/jq/)
 
 Role Variables
 --------------
